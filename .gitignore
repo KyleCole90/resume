@@ -1,0 +1,27 @@
+# Source files
+*.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local development
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp

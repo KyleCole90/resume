@@ -1,0 +1,408 @@
+/*
+ * Responsive Styles
+ * Mobile-first breakpoints for the Web 2.0 Resume
+ */
+
+/* ========================================
+   Base Mobile Styles (320px+)
+   Already defined in web2.css as defaults
+   ======================================== */
+
+/* ========================================
+   Small Mobile Adjustments (< 480px)
+   ======================================== */
+
+@media (max-width: 479px) {
+  :root {
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
+  }
+
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .glass-panel {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  .contact-badges {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-badge {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .badge-3d {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+
+  .nav-list {
+    gap: var(--space-xs);
+  }
+
+  .nav-link {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 55px;
+  }
+
+  .timeline-year {
+    width: 45px;
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+}
+
+/* ========================================
+   Tablet Portrait (768px+)
+   ======================================== */
+
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    padding: 0 var(--space-lg);
+  }
+
+  .hero {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero-content {
+    padding: 0 var(--space-lg);
+  }
+
+  /* Navigation spacing */
+  .nav-list {
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    padding: 12px 22px;
+  }
+
+  /* Expertise 2 columns */
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Timeline adjustments */
+  .timeline::before {
+    left: 35px;
+  }
+
+  .timeline-item {
+    padding-left: 90px;
+  }
+
+  .timeline-year {
+    width: 70px;
+  }
+
+  /* Experience cards side by side */
+  .experience-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Education cards side by side */
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   Desktop (1024px+)
+   ======================================== */
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .glass-panel {
+    padding: var(--space-xl);
+  }
+
+  /* Navigation */
+  .nav-list {
+    gap: var(--space-lg);
+  }
+
+  /* Expertise 3 columns */
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Timeline - Alternating sides */
+  .timeline {
+    max-width: 1000px;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-2px);
+  }
+
+  .timeline-item {
+    width: 50%;
+    padding-left: 0;
+    padding-right: var(--space-xl);
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: var(--space-xl);
+    padding-right: 0;
+  }
+
+  .timeline-marker {
+    left: auto;
+    right: -35px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-marker {
+    left: -35px;
+    right: auto;
+  }
+
+  /* Larger tech badges */
+  .tech-badge {
+    font-size: 1.1rem;
+    padding: 16px 28px;
+  }
+
+  .tech-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================================
+   Large Desktop (1440px+)
+   ======================================== */
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  .summary-panel {
+    max-width: 1000px;
+  }
+
+  .timeline {
+    max-width: 1100px;
+  }
+}
+
+/* ========================================
+   Touch Device Optimizations
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover transforms on touch */
+  .btn-glossy:hover,
+  .badge-3d:hover,
+  .contact-badge:hover {
+    transform: none;
+  }
+
+  /* Use active state instead */
+  .btn-glossy:active,
+  .badge-3d:active {
+    transform: scale(0.97);
+  }
+
+  /* Ensure good touch targets */
+  .btn-glossy,
+  .badge-3d,
+  .nav-link {
+    min-height: 44px;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  .navbar,
+  .skip-link,
+  .contact-badge .icon {
+    display: none;
+  }
+
+  /* Reset backgrounds */
+  body {
+    background: white;
+    color: black;
+  }
+
+  .glass-panel,
+  .badge-3d,
+  .btn-glossy {
+    background: white !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    color: black !important;
+    text-shadow: none !important;
+  }
+
+  .badge-3d::before,
+  .btn-glossy::before,
+  .glass-panel::before {
+    display: none;
+  }
+
+  /* Remove reflections */
+  .timeline::before {
+    background: #ccc;
+    box-shadow: none;
+  }
+
+  /* Page break controls */
+  .section {
+    page-break-inside: avoid;
+  }
+
+  .timeline-item {
+    page-break-inside: avoid;
+  }
+
+  /* Show link URLs */
+  a[href^="http"]::after,
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+    font-weight: normal;
+  }
+
+  /* Compact spacing */
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .hero {
+    padding: 1rem 0;
+  }
+}
+
+/* ========================================
+   High Contrast Mode
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #1a1a1a;
+    --border-color: #000000;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.98);
+    border: 2px solid #000;
+  }
+
+  .btn-glossy,
+  .badge-3d {
+    border: 2px solid currentColor;
+  }
+
+  a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+}
+
+/* ========================================
+   Dark Mode (optional - commented out)
+   Uncomment to enable dark mode support
+   ======================================== */
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #1a2332;
+    --bg-section: #232f40;
+    --bg-section-alt: #1e2a3a;
+    --text-primary: #e8f0f5;
+    --text-secondary: #a8b8c8;
+    --text-light: #7890a4;
+    --border-color: #3a4a5a;
+    --glass-white: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+  }
+
+  body {
+    background-image:
+      radial-gradient(ellipse at top, #2a3a4a 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, #1a2a3a 0%, transparent 50%);
+  }
+
+  .glass-panel {
+    background: linear-gradient(
+      135deg,
+      rgba(40, 55, 75, 0.95) 0%,
+      rgba(30, 45, 60, 0.85) 100%
+    );
+  }
+
+  .glass-panel::before {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 50%,
+      transparent 100%
+    );
+  }
+
+  .navbar {
+    background: linear-gradient(
+      180deg,
+      rgba(30, 42, 58, 0.95) 0%,
+      rgba(26, 35, 50, 0.95) 100%
+    );
+    border-color: var(--border-color);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-main) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+*/
