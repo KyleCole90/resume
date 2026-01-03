@@ -77,19 +77,3 @@ button {
   outline-offset: 3px;
 }
 
-/* Skip link for accessibility */
-.skip-link {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  background: var(--primary-dark, #2b7ab5);
-  color: white;
-  padding: 10px 20px;
-  z-index: 10000;
-  transition: top 0.3s;
-  border-radius: 0 0 8px 0;
-}
-
-.skip-link:focus {
-  top: 0;
-}
