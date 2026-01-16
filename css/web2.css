@@ -424,7 +424,6 @@ h4 {
   margin: 0 auto var(--space-lg);
   position: relative;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   background: linear-gradient(
@@ -508,16 +507,6 @@ h4 {
   font-weight: 500;
 }
 
-.hero-location {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
 /* Contact Badges */
 .contact-badges {
   display: flex;
@@ -534,6 +523,10 @@ h4 {
 
 .contact-badge:hover {
   transform: translateY(-3px) scale(1.05);
+}
+
+.contact-badge:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 .contact-badge .icon {
@@ -949,16 +942,3 @@ h4 {
   }
 }
 
-/* ========================================
-   Utility Classes
-   ======================================== */
-
-.text-center { text-align: center; }
-.mt-0 { margin-top: 0; }
-.mb-0 { margin-bottom: 0; }
-.mt-sm { margin-top: var(--space-sm); }
-.mb-sm { margin-bottom: var(--space-sm); }
-.mt-md { margin-top: var(--space-md); }
-.mb-md { margin-bottom: var(--space-md); }
-.mt-lg { margin-top: var(--space-lg); }
-.mb-lg { margin-bottom: var(--space-lg); }

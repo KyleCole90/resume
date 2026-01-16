@@ -173,47 +173,6 @@
   }
 
   // ========================================
-  // Badge Hover Performance Optimization
-  // ========================================
-
-  function initBadgeInteractions() {
-    const badges = document.querySelectorAll('.badge-3d, .btn-glossy');
-
-    badges.forEach(badge => {
-      badge.addEventListener('mouseenter', function() {
-        this.style.willChange = 'transform, box-shadow';
-      });
-
-      badge.addEventListener('mouseleave', function() {
-        this.style.willChange = 'auto';
-      });
-    });
-  }
-
-  // ========================================
-  // Contact Badge Interactions
-  // ========================================
-
-  function initContactBadges() {
-    const contactBadges = document.querySelectorAll('.contact-badge');
-
-    contactBadges.forEach(badge => {
-      // Add subtle press effect
-      badge.addEventListener('mousedown', function() {
-        this.style.transform = 'translateY(-1px) scale(0.98)';
-      });
-
-      badge.addEventListener('mouseup', function() {
-        this.style.transform = '';
-      });
-
-      badge.addEventListener('mouseleave', function() {
-        this.style.transform = '';
-      });
-    });
-  }
-
-  // ========================================
   // Keyboard Navigation Enhancement
   // ========================================
 
@@ -239,15 +198,7 @@
     initStickyNav();
     initActiveNavHighlight();
     initScrollReveal();
-    initBadgeInteractions();
-    initContactBadges();
     initKeyboardNav();
-
-    // Log initialization (remove in production if desired)
-    console.log('%c Kyle Cole Resume %c Web 2.0 Style ',
-      'background: linear-gradient(135deg, #67b3dd, #2b7ab5); color: white; padding: 5px 10px; border-radius: 5px 0 0 5px; font-weight: bold;',
-      'background: linear-gradient(135deg, #ffb74d, #f57c00); color: white; padding: 5px 10px; border-radius: 0 5px 5px 0; font-weight: bold;'
-    );
   }
 
   // Run when DOM is ready
